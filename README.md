@@ -1,0 +1,53 @@
+# subjective_detection
+Subjective Dectection based on subjective knowlegebase,  
+基于中文主观性知识库的句子主观性评定方法。  
+
+# How to run?
+
+```shell
+bash run.sh
+```
+
+This command will create the environment that needed by the models.  
+This project is created on the purposes of easy-on-run.  
+If you want to know the details about the models, just read code.  
+
+#项目介绍 
+主观性是中文舆情和文本挖掘一个必不可少的一项环节。
+本项目将从中文自身的特点出发，通过总结并挖掘中文句子主观性线索知识库和客观性线索知识库，提供一个面向中文句子的主观性判定方法。
+
+# 主观性字典
+1) degree_words.txt:程度副词，221个
+2) deny_words.txt:否定副词，29个
+3) lianci_words.txt:连词，93个
+4) nengyuan_words.txt:能愿副词，719个
+5) pingjia_words.txt:评价词，6846个
+6) qingtai_words.txt:情态动词，29个
+7) rencheng_words.txt:人称代词，32个
+8) senti_words:情感词，2090个
+9) tanci_words:叹词，139个
+10) yiwen_words:疑问代词，26个
+11) yuqi_words:语气词，17个
+12) zhishi_words.txt:指示代词，64个
+13) zhuangtai_words.txt:状态词，49个
+14) zhuzhang_words.txt:主张词，235个
+
+# 主观性计算规则
+1) 文本分句
+2) 计算每个句子的主观性。
+3) 每个句子主观性计算方式:主观线索词*主观线索词权重，做加权累加和平均
+3) 每个句子主观性求平均
+4) 输出文本主观性
+
+# results
+
+中华人民共和国万岁
+0.2
+我喜欢你
+0.7666666666666666
+
+# 总结
+
+1）本项目以词汇知识库的方式，通过总结归纳出主观性线索词，并加以规则进行计算。  
+2) 从上面的效果来看，还像是那么回事，但还有提升空间。  
+3) 主观性配合情感得分，相信能够在舆情分析上起到一定作用。   
